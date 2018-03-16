@@ -2,8 +2,4 @@
 
 .git
 
-node_modules
-
 .sass-cache
-
-package-lock.json
