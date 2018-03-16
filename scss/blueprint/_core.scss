@@ -1,0 +1,58 @@
+//  ////  ////  --  --|    CORE
+
+
+
+
+//  --|    RESETTERS
+
+* { box-sizing: border-box }
+
+img, video { 
+	max-width: 100%; 
+	height: auto; 
+	display: inline-block; 
+}
+
+
+//  --|    SELECTION
+
+*::selection {
+	color: $white;
+	background-color: $orange;
+	text-shadow: none;
+}
+
+
+//  --|    BODY BASE STYLING
+
+body {
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+	position: relative;
+	overflow-x: hidden;
+
+	background-color: $white;
+}
+
+
+//  --|    MAIN CONTENT CONTAINER
+
+$container-width: 96;
+// This value is also used for header and footer widths
+// by default
+
+
+main {
+	width: 100%;
+	max-width: 460px;
+	margin: 0 auto;
+	padding: 0 2rem;
+	padding-top: 7.2rem; // Compensate for fixed header height
+	display: block;
+	position: relative;
+
+	@include x( m ) {
+		max-width: #{$container-width}rem;
+	}
+}

@@ -1,0 +1,43 @@
+//  ////  ////  --  --|    MIXINS
+
+
+
+
+//  MEDIA QUERIES
+$sizes: ( m: 768px, l: 1260px );
+
+@mixin x( $size ) {
+
+    @media screen and ( min-width: #{map-get( $sizes, $size )} ) {
+        @content;
+    }
+}
+
+@mixin y( ) {
+
+    @media screen and ( orientation: landscape ) {
+        @content;
+    }
+}
+
+
+// RESPONSIVE RATIO
+@mixin ratio( $x, $y ) {
+    padding-top: unquote( ( $y / $x ) * 100 + '%' );
+}
+
+
+//  TRUNCATE
+@mixin truncate( $overflow: ellipsis ) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: $overflow;
+}
+
+
+//  PSEUDO
+@mixin pseudo( $type: relative ) {
+    content: '';
+    display: block;
+    position: $type;
+}

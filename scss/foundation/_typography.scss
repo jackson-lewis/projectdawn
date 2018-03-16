@@ -1,0 +1,225 @@
+//  ////  ////  --  --|    TYPOGRAPHY
+
+
+
+
+//	CORE RESET ON COMMON ELEMENTS
+p, h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; border: 0 }
+
+
+
+
+//  ////  --|    IMPORT FONTS
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+
+
+
+//  ////  --|    BASE STYLING
+
+
+html {
+    font-size: 62.5%; // This causes 1rem to equal 10px
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: #{$base-font-size}rem; // 1.6rem by default
+	font-weight: 400;
+	font-style: normal;
+
+	color: $l-black; 
+
+	// 	It's typically better for body text to be subtly lighter
+	//	than headings, value here is 10% lighter than base colour
+}
+
+p {
+	$max-line-width: $base-font-size * 38; // 38 is a magic number, don't change it please
+
+	max-width: #{$max-line-width}rem; // Optimal line width
+	margin: 0 auto;
+	margin-bottom: 2.4rem;
+
+	line-height: $base-line-height; // 1.5 by default
+	text-align: left;
+}
+
+
+
+
+//  ////  --|    HEADINGS
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+
+	text-transform: capitalize;
+
+	color: $black;
+}
+
+
+//  --|    SETTINGS
+
+// 	Font sizes ~ unit should be excluded
+$h1:	6;
+$h2:	4.8;
+$h3:	3.6;
+$h4:	3;
+$h5:	2.4;
+$h6:	1.6;
+
+// 	Defines if headings should sit on baseline
+$true-align: true;
+
+// 	Note: Headings will only sit on baseline with default values, 
+//	adjusting the font sizes will mean you have to manually reset padding.
+//	(You have been warned)
+
+// ----------------
+
+
+h1 {
+	@if ( $true-align ) {
+
+		padding-top: 0.8rem;
+		padding-bottom: 1.6rem;
+	}
+
+	font-size: #{$h1}rem;
+	line-height: line_height( 3, $h1 ); // Aligns to 72 (96 with true align set)
+}
+
+h2 {
+	@if ( $true-align ) {
+
+		padding-top: 1.2rem;
+		padding-bottom: 1.2rem;
+	}
+
+	font-size: #{$h2}rem;
+	line-height: line_height( 3, $h2 ); // Aligns to 72 (96 with true align set)
+}
+
+h3 {
+	@if ( $true-align ) {
+
+		padding-top: 1.6rem;
+		padding-bottom: 0.8rem;
+	}
+ 
+	font-size: #{$h3}rem;
+	line-height: line_height( 3, $h3 ); // Aligns to 72 (96 with true align set)
+}
+
+h4 {
+	@if ( $true-align ) {
+		padding-top: 0.7rem;
+		padding-bottom: 1.7rem;
+	}
+
+	font-size: #{$h4}rem;
+	line-height: line_height( 2, $h4 ); // Aligns to 48 (72 with true align set)
+}
+
+h5 {
+	@if ( $true-align ) {
+		padding-top: 0.9rem;
+		padding-bottom: 1.5rem;
+	}
+
+	font-size: #{$h5}rem;
+	line-height: line_height( 2, $h5 ); // Aligns to 48 (72 with true align set)
+}
+
+h6 {
+	@if ( $true-align ) {
+		padding-top: 2.4rem;
+		padding-bottom: 0rem;
+	}
+
+	font-size: #{$h6}rem;
+	line-height: line_height( 1, $h6 ); // Aligns to 24 (48 with true align set)
+}
+
+
+
+
+//  ////  --|    ANCHOR / LINKS
+
+a {
+	display: inline-block;
+
+	color: $purple;
+	text-decoration: none;
+
+	transition: $duration;
+
+	&:hover {
+		color: $black;
+	}
+}
+
+//	If <p> follows <a> then add margin-top
+//	to the <p> tag
+a + p {
+	margin-top: 2.4rem;
+}
+
+
+
+
+//  ////  --|    BLOCKQUOTE
+
+
+blockquote {
+	margin: 0 auto 2.4rem auto;
+	padding: 0.7rem 0rem 1.7rem 4rem;
+	position: relative;
+
+	$bq-size: 2.8;
+
+	font-size: #{$bq-size}rem;
+	font-style: italic;
+	line-height: line_height( 2, $bq-size );
+
+	$caption: true;
+
+	@if ( $caption ) {
+
+		span {
+			margin-top: 0.9rem;
+			padding-top: 0.5rem;
+			padding-bottom: 0.9rem;
+			display: block;
+
+			border-top: 0.1rem solid $orange;
+
+			$bq-caption: ( $bq-size / 1.4 );
+
+			font-size: #{$bq-caption}rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: line_height( 1, $bq-caption );
+		}
+	}
+
+
+	&::before {
+		content: "\201C"; // Quotation mark
+
+		position: absolute;
+		top: 1.8rem;
+		left: 0.6rem;
+
+		$bq-quote: $bq-size * 2;
+
+		color: $orange;
+		font-size: #{$bq-quote}rem;
+		line-height: line_height( 1, $bq-quote );
+	}
+}

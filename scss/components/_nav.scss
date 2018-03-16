@@ -1,0 +1,104 @@
+//  ////  ////  --  --|    NAV
+
+
+
+
+//  ////  --|    BASE
+
+
+nav {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+	position: absolute;
+    left: 0;
+    top: 4.8rem;
+	display: none;
+	z-index: $z-nav;
+
+    background-color: rgba( darken( $white, 5% ), .8 );
+    -webkit-backdrop-filter: blur(2px);
+    
+    ul {
+        list-style-type: none;
+    
+        width: 100%;
+        margin: 0 auto;
+        padding: 4.8rem 0;
+        display: block;
+        position: relative;
+
+        li {
+            padding: 1.2rem 0;
+
+            $text-size: 2.2;
+
+            font-size: #{$text-size}rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: line_height( 2, $text-size );
+        }
+
+        a {
+            color: $black;
+        }
+
+        
+    }
+
+    // Selected media query where nav menu switches
+    // from mobile/tablet view to desktop view
+
+    // Remember to adjust header and hamburger styling
+    // to match the chosen breakpoint for header type
+    @include x( m ) {
+
+        width: 50%;
+        display: block;
+        position: relative;
+        top: 0;
+
+        background-color: transparent;
+        -webkit-backdrop-filter: blur( 0px );
+
+        ul {
+            width: auto;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            float: right;
+
+            li {
+                padding: 0.6rem 1.2rem;
+
+                $text-size: 1.4;
+
+                font-size: #{$text-size}rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                text-align: center;
+                line-height: line_height( 1, $text-size );
+            }
+
+            li:last-of-type {
+                padding-right: 0;
+            }
+
+        }
+    }
+}
+
+
+//  --|    NAV UTILITY CLASSES
+
+// Stop user from scrolling when nav menu is
+// open on mobile and/or tablet
+.no-scroll { overflow-y: hidden; }
+
+// Makes nav menu visible on mobile and/or tablet
+.nav-change { display: block; }
+
+// Set link of current page to active colour
+.active { color: $purple }

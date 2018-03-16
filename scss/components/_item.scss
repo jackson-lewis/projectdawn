@@ -1,0 +1,54 @@
+//  ////  ////  --  --|    ITEM
+
+
+
+
+//  --|    CONTAINER
+
+// The parent container of items must @extend %clearfix,
+// this is just an example
+.item-container {
+    @extend %clearfix;
+}
+
+
+//  --|    ITEM BASE STYLING
+
+// Items can come in many different forms,
+// so this is just a starting point with some
+// of the basic core styling
+
+.item {
+    width: 100%;
+    margin-bottom: 4.8rem;
+    display: block;
+    position: relative;
+
+    h5 {
+        padding: 0; // Turns off true align
+    }
+
+    .thumbnail {
+        display: block;
+        position: relative;
+
+        overflow: hidden;
+
+        // Set the aspect ratio for the image
+        @include ratio( 16, 9 );
+
+        img {
+            position: absolute;
+            top: 0; left: 0;
+        }
+    }
+
+    // Set the number of items per row
+    @include x( m ) {
+        @include col( 6 );
+    }
+
+    @include x( l ) {
+        @include col( 3, false );
+    }
+}

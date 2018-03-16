@@ -1,0 +1,35 @@
+//  ////  ////  --  --|    CODE
+
+
+
+
+$border: 0.1rem; // Value must be less than 0.55rem
+
+$padding: 1.75rem - $border; // 1.75rem is base value
+
+
+pre {
+	width: 100%;
+	margin: 0 0 2.4rem 0;
+	padding: $padding;
+
+	background-color: $white;
+	border: $border solid $orange;
+	border-radius: 0.6rem;
+
+
+	$code-size: 90;
+
+	@function get_code_line_height() {
+		@return ( $base-font-size * ( $code-size / 10 ) );
+	}
+
+	font-size: 90%; // 1.44rem
+
+	line-height: ( baseline( 2 ) / get_code_line_height() ); // Align to 24
+
+
+	code {
+		width: 100%;
+	}
+}

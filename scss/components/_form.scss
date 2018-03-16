@@ -1,0 +1,38 @@
+//  ////  ////  --  --|    FORM
+
+
+
+
+//  ////  --|    BASE
+
+
+form {
+    @include x( m ) {
+        max-width: 70rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        // Name and email (input)
+        div:nth-of-type(-n+2) {
+            @include col( 6 );
+        }
+
+        // Message (textarea)
+        div:nth-of-type(3) {
+            @include col( 12 );
+        }
+
+        // Checkbox
+        div:nth-of-type(4) {
+            @include col( 6 );
+
+            margin-top: 1.2rem;
+            margin-bottom: 1.2rem; 
+        }
+
+        // Button for submit
+        input[type="submit"] {
+            margin-right: 2%;
+        }
+    }
+}

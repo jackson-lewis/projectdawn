@@ -1,0 +1,65 @@
+//  ////  ////  --  --|    HAMBURGER
+
+
+
+
+//   As part of the header component
+
+
+//  --|    BASE
+
+.toggle {
+    width: 26px;
+    height: 18px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    z-index: $z-hamburger;
+
+    transition: .8s;
+
+    span:nth-child(1) {
+        margin-top: 0;
+    }
+
+    span:nth-child(3) {
+        margin-bottom: 0;
+    }
+
+    @include x( m ) {
+        display: none;
+    }
+}
+
+.toggle > span {
+    width: 26px;
+    height: 2px;
+    margin: 6px 0;
+
+    background-color: $black;
+    transition: .8s;
+}
+
+
+//  --|    ANIMATION EFFECTS
+
+.bar-change {
+    transform: rotateZ(180deg) scale( 0.8 );
+}
+
+.bar-change span:nth-child(1) {
+    transform: translate(0px, 8px) rotate(45deg);
+}
+.bar-change span:nth-child(2) {
+    transform: scale( 0 );
+}
+.bar-change span:nth-child(3) {
+    transform: translate(0px, -8px) rotate(-45deg);
+}
+
+
+//  --|    HEADER STATE CHANGE UTILITY CLASS
+
+.switch {
+    background-color: $white;
+}

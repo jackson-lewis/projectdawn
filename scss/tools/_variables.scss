@@ -1,0 +1,60 @@
+//  ////  ////  --  --|    VARIABLES
+
+
+
+
+//  ////  --|    CORE
+
+
+$base-font-size: 	1.6; // 1.6rem 
+$base-line-height:	1.5;
+
+$baseline: 			( ( $base-font-size * 10 ) * $base-line-height ); // 24
+
+
+
+
+//  ////  --|    COLORS
+
+
+//  COLOR SCHEME
+$black:     #080808;
+$l-black:	lighten( $black, 10% );
+
+$white:     #FAFAFA;
+
+$orange:   	#FF6200;
+$purple: 	#9700C2;
+
+
+
+
+//  ////  --|    Z-INDEX ARCHIVE
+
+
+//  TOP LEVEL
+$z-header:      80;
+$z-container:   60;
+$z-footer:      40;
+
+
+//  HEADER SUB LEVEL (CONTENT)
+$z-nav:         10;
+$z-hamburger:   20;
+
+
+//  CONTAINER SUB LEVEL (CONTENT)
+$z-sample:      10;
+
+
+//  FOOTER SUB LEVEL (CONTENT)
+$z-sample:      10;
+
+
+
+
+//  ////  --|    MISC
+
+
+//  HOVER EFFECT TIMER
+$duration: .3s;

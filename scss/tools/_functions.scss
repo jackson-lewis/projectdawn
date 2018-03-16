@@ -1,0 +1,19 @@
+//  ////  ////  --  --|    FUNCTIONS
+
+
+
+
+//  GET BASELINE VALUE
+@function baseline( $multiplier ) {
+    @return ( $baseline * $multiplier );
+}
+
+
+// GENERATE HEADING LINE HEIGHT
+@function line_height( $multiplier, $type ) {
+
+	$line-height: ( baseline( $multiplier ) / ( $type * 10 ) );
+
+
+	@return $line-height;
+}

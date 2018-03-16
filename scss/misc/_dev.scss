@@ -1,0 +1,42 @@
+//  ////  ////  --  --|    DEV TOOLS
+
+
+
+
+//	CONTROLLERS
+$dev: 			true;	// MASTER
+
+$guides: 		true;	// GUIDELINES
+$boundaries: 	false;	// BOUDARY MARKERS
+
+
+
+//  --|    CORE
+
+body {
+	min-height: 200vh; // Set to 200 for dev build only
+}
+
+
+//  --|    GUIDELINES
+@if ( $dev and $guides ) {
+
+	body {
+		background-position: 0 -0.8rem;
+		background-image: linear-gradient( #ccc 1px, transparent 1px );
+		background-size: 100% 24px; 
+	} 
+}
+
+
+//  --|    BOUNDARIES
+@if ( $dev and $boundaries ) {
+
+	h1, h2, h3, h4, h5, h6 {
+		background-color: rgba( $orange, .1 );
+	} 
+
+	p, li {
+		background-color: rgba( $purple, .1 );
+	}
+}

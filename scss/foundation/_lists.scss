@@ -1,0 +1,36 @@
+//  ////  ////  --  --|    LISTS
+
+
+
+
+//	If you're looking to increase the space between
+//	the bullet and text, place text inside span
+//	positioned relative to the li then use
+//	padding-left on the span.
+
+
+ul, ol {
+	margin-top: 0;
+	margin-bottom: 2.4rem;
+	padding-left: 0.4rem;
+
+	line-height: 1.5;
+
+	li {
+		margin-bottom: 0rem;
+	}
+}
+
+ul {
+	list-style: circle inside;
+}
+
+ol {
+	list-style: decimal inside;
+}
+
+// Support for nested lists (only 1 level)
+ul ul, ul ol, ol ol, ol ul {
+	margin-bottom: 0;
+	padding-left: 3rem;
+}

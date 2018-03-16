@@ -1,0 +1,71 @@
+//  ////  ////  --  --|    POPUP
+
+
+
+
+//  ////  --|    BASE
+
+
+.popup {
+    width: calc( 100% - 4rem );
+    padding: 4.8rem 2rem 2.4rem 2rem; // Extra padding-top allows more space for X closer
+
+    position: fixed;
+    top: 12rem;
+    left: 50%;
+    transform: translate( -50%, 0 );
+
+    background-color: rgba( darken( $white, 5% ), .8 );
+    -webkit-backdrop-filter: blur( 2px );
+
+    @extend %b-shadow;
+
+
+    // Close button
+    .x {
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 2rem;
+        right: 1rem;
+
+        cursor: pointer;
+
+        span {
+            width: 2.6rem;
+            height: 0.2rem;
+            display: block;
+            
+            background-color: $black;
+            transform: rotateZ( 45deg ) scale( 0.8 );
+
+            transition: $duration;
+
+            &::after {
+                @include pseudo;
+
+                width: 2.6rem;
+                height: 0.2rem;
+
+                background-color: $black;
+                transform: rotateZ( 90deg );
+            }
+        }
+
+        &:hover span {
+            transform: rotateZ( 135deg ) scale( 0.7 );
+        }
+    }
+
+    @include x( m ) {
+        max-width: 56rem;
+        padding-top: 2.4rem;
+    }
+
+    @include x( l ) {
+        max-width: 62rem;
+    }
+}
