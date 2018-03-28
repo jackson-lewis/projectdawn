@@ -9,17 +9,16 @@
 
 		<!-- MASTER HERO -->
 		<div class="hero">
-            <div class="hero-background"></div>
+            <div class="hero-background" id="hero-bg"></div>
             <div class="hero-content">
-        		<h1>Sunrise</h1>
-        		<p>The content within</p>
+        		<h1>Heading</h1>
+        		<p>Content</p>
             </div>
         </div>
 
         
 		<!-- MAIN CONTAINER -->
 		<main>
-
 			
 
 		</main>

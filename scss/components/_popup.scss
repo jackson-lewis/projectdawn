@@ -10,12 +10,14 @@
     width: calc( 100% - 4rem );
     padding: 4.8rem 2rem 2.4rem 2rem; // Extra padding-top allows more space for X closer
 
+    display: none; // Invisible by default
     position: fixed;
     top: 12rem;
     left: 50%;
     transform: translate( -50%, 0 );
 
-    background-color: rgba( darken( $white, 5% ), .8 );
+
+    background-color: rgba( darken( $white, 5% ), .9 );
     -webkit-backdrop-filter: blur( 2px );
 
     @extend %b-shadow;
@@ -43,6 +45,7 @@
             transform: rotateZ( 45deg ) scale( 0.8 );
 
             transition: $duration;
+            transition-timing-function: cubic-bezier(.38,.88,.67,1.39);
 
             &::after {
                 @include pseudo;
@@ -68,4 +71,29 @@
     @include x( l ) {
         max-width: 62rem;
     }
+}
+
+
+// Popup appearing animation
+.popup-appear {
+    display: block;
+
+    animation: .6s appear forwards;
+}
+
+
+@keyframes appear {
+    0% { opacity: 0; transform: translate( -50%, 4rem ) }
+    100% { opacity: 1; transform: translate( -50%, 0 ) }
+}
+
+
+// Popup disappearing animation
+.popup-disappear {
+    animation: .5s disappear forwards;
+}
+
+@keyframes disappear {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }

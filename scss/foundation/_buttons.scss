@@ -25,8 +25,14 @@
 	letter-spacing: 0.1rem;
 
 	transition: $duration;
+	cursor: pointer;
 }
 
+
+// Use .button when you want an anchor to have
+// button styling.
+
+.button,
 button,
 input[type="submit"],
 input[type="reset"],

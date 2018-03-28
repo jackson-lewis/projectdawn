@@ -98,7 +98,11 @@ nav {
 .no-scroll { overflow-y: hidden; }
 
 // Makes nav menu visible on mobile and/or tablet
+
+// This can be made fancy with animations
 .nav-change { display: block; }
 
 // Set link of current page to active colour
+
+// By default, JS is used to add this class
 .active { color: $purple }

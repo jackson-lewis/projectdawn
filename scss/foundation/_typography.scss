@@ -54,6 +54,13 @@ p {
 
 
 h1, h2, h3, h4, h5, h6 {
+
+	// For some reason, Sass doesn't recognise mutliple use of this variable,
+	// so it's just been duplicated for the time being.
+
+	$max-line-width: $base-font-size * 38; // 38 is a magic number, don't change it please
+	max-width: #{$max-line-width}rem; // Optimal line width
+
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 
@@ -177,6 +184,12 @@ a + p {
 
 
 blockquote {
+	// For some reason, Sass doesn't recognise mutliple use of this variable,
+	// so it's just been duplicated for the time being.
+	
+	$max-line-width: $base-font-size * 38; // 38 is a magic number, don't change it please
+	max-width: #{$max-line-width}rem; // Optimal line width
+
 	margin: 0 auto 2.4rem auto;
 	padding: 0.7rem 0rem 1.7rem 4rem;
 	position: relative;
@@ -209,8 +222,9 @@ blockquote {
 	}
 
 
+	// Quotation mark
 	&::before {
-		content: "\201C"; // Quotation mark
+		content: "\201C"; 
 
 		position: absolute;
 		top: 1.8rem;

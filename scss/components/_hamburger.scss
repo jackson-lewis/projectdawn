@@ -35,9 +35,11 @@
     width: 26px;
     height: 2px;
     margin: 6px 0;
+    display: block;
 
     background-color: $black;
     transition: .8s;
+    transition-timing-function: ease-out;
 }
 
 
@@ -55,11 +57,4 @@
 }
 .bar-change span:nth-child(3) {
     transform: translate(0px, -8px) rotate(-45deg);
-}
-
-
-//  --|    HEADER STATE CHANGE UTILITY CLASS
-
-.switch {
-    background-color: $white;
 }

@@ -6,7 +6,7 @@
 //  --|    CONTAINER
 
 // The parent container of items must @extend %clearfix,
-// this is just an example
+// this is just an example (not a utility class)
 .item-container {
     @extend %clearfix;
 }
@@ -37,6 +37,8 @@
         // Set the aspect ratio for the image
         @include ratio( 16, 9 );
 
+        // This styling is required for the aspect ratio
+        // mixin to work, as it uses padding to create the size.
         img {
             position: absolute;
             top: 0; left: 0;

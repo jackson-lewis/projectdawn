@@ -4,27 +4,27 @@
 
 var gulp            = require( 'gulp' ),
 
-	postcss         = require( 'gulp-postcss' ),
-	sass            = require( 'gulp-sass' ),
-	autoprefixer    = require( 'autoprefixer' ),
+    postcss         = require( 'gulp-postcss' ),
+    sass            = require( 'gulp-sass' ),
+    autoprefixer    = require( 'autoprefixer' ),
 
     babel           = require( 'gulp-babel' ),
 
-    browserSync 	= require( 'browser-sync' ).create();
+    browserSync     = require( 'browser-sync' ).create();
 
 
 // SASSY GOODNESS
 gulp.task( 'sass', function () {
 
-  	var processors = [ autoprefixer ];
+    var processors = [ autoprefixer ];
 
-  	return gulp.src( 'scss/style.scss' )
-  		.pipe( sass().on( 'error', sass.logError ) )
-    	.pipe( postcss( processors ) )
-    	.pipe( gulp.dest( 'prod/css' ) )
-    	.pipe( browserSync.reload({
-	    	stream: true
-	    }))
+    return gulp.src( 'scss/style.scss' )
+        .pipe( sass().on( 'error', sass.logError ) )
+        .pipe( postcss( processors ) )
+        .pipe( gulp.dest( 'prod/css' ) )
+        .pipe( browserSync.reload({
+            stream: true
+        }))
 });
 
 
@@ -40,16 +40,16 @@ gulp.task( 'babel', () =>
 
 // ALWAYS WATCHIN
 gulp.task( 'watch', [ 'reload', 'sass', 'babel' ], function(){
-	gulp.watch( 'scss/**/*.scss', [ 'sass' ] )
-	gulp.watch( 'js/*.js', [ 'babel', browserSync.reload ] )
-	gulp.watch( 'prod/**/*.php' ).on( 'change', browserSync.reload );
+    gulp.watch( 'scss/**/*.scss', [ 'sass' ] )
+    gulp.watch( 'js/*.js', [ 'babel', browserSync.reload ] )
+    gulp.watch( 'prod/**/*.php' ).on( 'change', browserSync.reload );
 })
 
 
 // LINK BROWSERSYNC TO MAMP
 gulp.task( 'reload', function() {
     browserSync.init({
-        proxy: 'http://localhost/year%20three/project/package/prod/',
+        proxy: 'http://localhost/path/to/directory',
         port: 8080
     });
 });

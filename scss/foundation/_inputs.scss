@@ -3,18 +3,6 @@
 
 
 
-//  ////  --|    BASE
-
-
-form {
-    margin-bottom: 2.4rem;
-
-    @extend %clearfix;
-}
-
-
-
-
 //  ////  --|    LABELS
 
 
@@ -33,7 +21,7 @@ label {
 
 
 
-//  ////  --|    INPUTS
+//  ////  --|    TYPE INPUTS
 
 
 input[type="name"],
@@ -92,7 +80,8 @@ select {
 
 //  --|    CHECKBOX
 
-[ data-input="checkbox" ] {
+// Should be applied to a <div> with input and label nested
+.checkbox {
     $double-baseline: false; // If true, will match to 48; False will match 24
 
     @if ( $double-baseline ) {

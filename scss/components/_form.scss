@@ -7,6 +7,11 @@
 
 
 form {
+    margin-bottom: 2.4rem;
+
+    @extend %clearfix;
+
+
     @include x( m ) {
         max-width: 70rem;
         margin-left: auto;

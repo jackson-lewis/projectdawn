@@ -3,7 +3,20 @@
 
 
 
-//  IMAGE HOVER EFFECT
+// This file is the home for custom features of a project
+// that are used within multiple foundations or components.
+
+
+
+
+//  --|    IMAGE HOVER EFFECT
+
+// When using this effect, nest the two <img> inside a div,
+// which must be positioned relative or absolute.
+
+// The default image should have .top applied, with the other .bottom
+// applied.
+
 %img-pos {
     position: absolute;
 	top: 0; left: 0;

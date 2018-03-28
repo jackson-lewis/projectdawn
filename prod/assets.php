@@ -9,6 +9,15 @@
 ?>
 
 
+<!-- CODE -->
+<div class="code">
+	<span>filename.js</span>
+	<pre><code></code></pre>
+</div>
+
+
+
+
 <!-- BLOCKQUOTE -->
 <blockquote>
 	A successful man is one who can lay a firm foundation with the bricks others have thrown at him.
@@ -19,7 +28,7 @@
 
 
 <!-- TABLE -->
-<table>
+<table cellspacing="0" cellpadding="0">
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -29,9 +38,9 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>Alex Dunnett</td>
-			<td>07765031280</td>
-			<td>alex.louise96@gmail.com</td>
+			<td>Jack Whitehall</td>
+            <td>07865034280</td>
+            <td>London</td>
 		</tr>
 	</tbody>
 </table>
@@ -43,8 +52,8 @@
 <div class="hero">
     <div class="hero-background"></div>
     <div class="hero-content">
-		<h1>Sunrise</h1>
-		<p>The content within</p>
+		<h1>Heading</h1>
+		<p>Content</p>
     </div>
 </div>
 
@@ -65,7 +74,7 @@
 		<label>message</label>
 		<textarea></textarea>
 	</div>
-	<div data-input="checkbox">
+	<div class="checkbox">
 		<input type="checkbox" name="">
 		<label>join the newsletter</label>
 	</div>
@@ -78,8 +87,8 @@
 <!-- POPUP -->
 <div class="popup">
 	<div class="x"><span></span></div>
-	<h4>Popup window</h4>
-	<p>The conten within</p>
+	<h4>Heading</h4>
+	<p>Content</p>
 </div>
 
 
@@ -93,28 +102,12 @@
 	<div class="item">
 		<h5>Heading</h5>
 		<div class="thumbnail">
-			<img src="assets/images/dock.jpg" alt="Image">
+			<img src="assets/" alt="Image">
 		</div>
-		<p>The content within</p>
+		<p>Content</p>
 	</div>
 
 	<?php } ?>
-</div>
-
-
-
-
-<!-- CAROUSEL -->
-<div class="carousel">
-	<div>
-		<img src="assets/images/bridge.jpg" alt="1">
-	</div>
-	<div>
-		<img src="assets/images/fish.jpg" alt="1">
-	</div>
-	<div>
-		<img src="assets/images/dock.jpg" alt="1">
-	</div>
 </div>
 
 
