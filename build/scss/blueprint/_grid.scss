@@ -1,0 +1,25 @@
+//  ////  ////  --  --|    GRID
+
+
+
+
+//  ////  --|    GRID MIXIN
+
+
+
+
+$columns:       12;
+$gutter_width:  2rem;
+
+
+@mixin col( $value, $include: true ) {
+
+    $cols: $columns / $value;
+
+    width: percentage( 1 / $cols );
+
+    @if ( $include ) {
+        padding-left: $gutter_width / 2;
+        padding-right: $gutter_width / 2;
+    }
+}

@@ -18,7 +18,7 @@ gulp.task( 'sass', function () {
 
     var processors = [ autoprefixer ];
 
-    return gulp.src( 'scss/style.scss' )
+    return gulp.src( 'build/scss/style.scss' )
         .pipe( sass().on( 'error', sass.logError ) )
         .pipe( postcss( processors ) )
         .pipe( gulp.dest( 'prod/css' ) )
@@ -30,7 +30,7 @@ gulp.task( 'sass', function () {
 
 //  JS BABEL
 gulp.task( 'babel', () =>
-    gulp.src( 'js/script.js' )
+    gulp.src( 'build/js/script.js' )
         .pipe( babel ({
             presets: [ 'env' ]
         }))
@@ -40,8 +40,8 @@ gulp.task( 'babel', () =>
 
 // ALWAYS WATCHIN
 gulp.task( 'watch', [ 'reload', 'sass', 'babel' ], function(){
-    gulp.watch( 'scss/**/*.scss', [ 'sass' ] )
-    gulp.watch( 'js/*.js', [ 'babel', browserSync.reload ] )
+    gulp.watch( 'build/scss/**/*.scss', [ 'sass' ] )
+    gulp.watch( 'build/js/*.js', [ 'babel', browserSync.reload ] )
     gulp.watch( 'prod/**/*.php' ).on( 'change', browserSync.reload );
 })
 
@@ -49,7 +49,7 @@ gulp.task( 'watch', [ 'reload', 'sass', 'babel' ], function(){
 // LINK BROWSERSYNC TO MAMP
 gulp.task( 'reload', function() {
     browserSync.init({
-        proxy: 'http://localhost/path/to/directory',
+        proxy: 'http://localhost/dev/projectdawn/prod/',
         port: 8080
     });
 });

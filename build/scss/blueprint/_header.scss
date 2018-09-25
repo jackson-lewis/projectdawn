@@ -1,0 +1,38 @@
+//  ////  ////  --  --|    HEADER
+
+
+
+
+//  ////  --|    BASE
+
+
+header {
+    @extend %site-width;
+
+	width: 100%;
+	padding-top: .5rem;
+    padding-bottom: .5rem;
+	position: fixed;
+    z-index: $z-header;
+
+    background-color: rgba( darken( $white, 5% ), .9 );
+    -webkit-backdrop-filter: blur(2px);
+    box-shadow: 0 0 1.2rem rgba( lighten( $black, 40% ), .4 );
+
+    //	CONTAINER
+    & > div {
+    	display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+    }
+
+
+    //	LOGO
+
+    // Can be replaced with heading tag directly,
+    // just remember to adjust padding/margins
+    img {
+    	height: 5rem;
+    	display: block;
+    }
+}

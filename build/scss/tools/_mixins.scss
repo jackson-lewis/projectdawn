@@ -1,0 +1,64 @@
+//  ////  ////  --  --|    MIXINS
+
+
+
+
+//  MEDIA QUERIES
+$sizes: ( m: 768px, l: 1240px );
+
+@mixin x( $size ) {
+
+    @media screen and ( min-width: #{map-get( $sizes, $size )} ) {
+        @content;
+    }
+}
+
+@mixin y( ) {
+
+    @media screen and ( orientation: landscape ) {
+        @content;
+    }
+}
+
+
+// RESPONSIVE RATIO
+
+// Default is a square
+@mixin ratio( $x: 1, $y: 1, $extra: true ) {
+    padding-top: unquote( ( $y / $x ) * 100 + '%' );
+
+    @if ( $extra ) {
+        position: relative;
+
+        img, video, iframe {
+            position: absolute;
+            top: 0; left: 0;
+        }
+    }
+}
+
+
+//  TRUNCATE
+@mixin truncate( $overflow: ellipsis ) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: $overflow;
+}
+
+
+//  PSEUDO
+@mixin pseudo( $type: relative, $content: '' ) {
+    content: $content;
+    display: block;
+    position: $type;
+}
+
+
+//  TEXT OUTLINE
+@mixin outline( $width: .1rem, $color: $white, $fill: transparent ) {
+    -webkit-text-fill-color: $fill;
+    -webkit-text-stroke: $width $color;
+
+    // Fallback if webkit not supported
+    color: $color;
+}

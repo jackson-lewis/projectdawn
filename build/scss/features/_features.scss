@@ -17,15 +17,16 @@
 // The default image should have .top applied, with the other .bottom
 // applied.
 
-%img-pos {
-    position: absolute;
+%image-settings {
+	position: absolute;
 	top: 0; left: 0;
 }
+
 .top { 
-	@extend %img-pos; 
+	@extend %image-settings; 
 	z-index: 2;
-	transition: $duration * 2;
+	transition: 400ms;
 
 	&:hover { opacity: 0; }
 }
-.bottom { @extend %img-pos; z-index: 1 }
+.bottom { @extend %image-settings; z-index: 1 }

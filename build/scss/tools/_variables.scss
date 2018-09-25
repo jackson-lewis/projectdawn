@@ -6,10 +6,7 @@
 //  ////  --|    CORE
 
 
-$base-font-size: 	1.6; // 1.6rem 
-$base-line-height:	1.5;
-
-$baseline: 			( ( $base-font-size * 10 ) * $base-line-height ); // 24
+// Contents
 
 
 
@@ -19,12 +16,16 @@ $baseline: 			( ( $base-font-size * 10 ) * $base-line-height ); // 24
 
 //  COLOR SCHEME
 $black:     #080808;
-$l-black:	lighten( $black, 10% );
+$grey:		lighten( $black, 20% );
 
 $white:     #FAFAFA;
 
-$orange:   	#FF6200;
-$purple: 	#9700C2;
+$orange:   	#FF6100;
+$purple: 	#E44BB0;
+
+$blend: 	mix( $orange, $purple );
+
+
 
 
 
@@ -57,4 +58,4 @@ $z-sample:      10;
 
 
 //  HOVER EFFECT TIMER
-$duration: .3s;
+$duration: 400ms;

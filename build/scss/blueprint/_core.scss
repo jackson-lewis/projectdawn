@@ -38,21 +38,15 @@ body {
 
 //  --|    MAIN CONTENT CONTAINER
 
-$container-width: 96; // 960px or 96rem
-// This value is also used for header and footer widths
-// by default
+
 
 
 main {
 	width: 100%;
-	max-width: 460px;
 	margin: 0 auto;
-	padding: 0 2rem;
-	padding-top: 7.2rem; // Compensate for fixed header height
+	padding-top: 12rem; // Compensate for fixed header height
 	display: block;
 	position: relative;
 
-	@include x( m ) {
-		max-width: #{$container-width}rem;
-	}
+	@extend %site-width;
 }

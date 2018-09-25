@@ -1,0 +1,59 @@
+//  ////  ////  --  --|    PLACEHOLDERS
+
+
+
+
+//  THE CLEARFIX
+%clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+//	SHADOWS
+%t-shadow {
+	text-shadow: 0 0 1.8rem rgba( lighten( $black, 40% ), .8 );
+}
+
+%b-shadow {
+	box-shadow: 0 0 1.8rem rgba( lighten( $black, 40% ), .4 );
+}
+
+
+
+
+//  --|    SITE WIDTH
+
+$container-width: 120; // 1200px or 120rem
+// This value is also used for header and footer widths
+// by default
+
+
+%site-width {
+	@extend %container-main;
+
+	@extend %outer-padding;
+}
+
+
+//	Set the width of nested content
+%container-main {
+	& > div {
+		max-width: #{$container-width}rem;
+		margin: 0 auto;
+	}
+}
+
+
+//	May be used seperately away from header,
+//	main and footer
+%outer-padding {
+	padding-left: 2rem;
+	padding-right: 2rem;
+
+	@include x( l ) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

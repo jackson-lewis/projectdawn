@@ -3,12 +3,16 @@
 
 
 
+//  --|    VARIABLES
+
+$hero_height:   80vh;
+
+
 //  --|    BASE
 
 .hero {
     width: 100%;
-    min-height: 100vh;
-    max-height: 100vh;
+    min-height: $hero_height;
     margin: 0;
     position: relative;
     display: block;
@@ -24,9 +28,9 @@
     height: 100%;
     position: absolute;
 
-    overflow-x: hidden;
+    overflow: hidden;
 
-    background-image: url( ../assets/images/sunrise.jpg );
+    background-image: url( ../assets/imagery/dawn-back.jpg );
     background-attachment: scroll; 
     background-size: cover;
     background-position: 20% 0%;
@@ -34,40 +38,33 @@
     
     opacity: 1;
 
-    // Background image position will vary 
-    // depending on the image, and where
-    // the focus point is
-
-    @include y {
-        background-position: 20% 40%;
-    }
-
-    @include x( m ) {
-        background-position: 20% 0%;
-    }
-
-    @include x( l ) {
-        background-position: 20% 0%;
-    }
 }
 
 
 //  --|    CONTENT (Text/buttons/other)
 
 .hero-content {
+    @extend %outer-padding;
+
     width: 100%;
     max-width: 46rem;
-    padding: 0 2rem;
     position: absolute;
     left: 50%; bottom: 12rem;
     transform: translateX( -50% );
 
     h1, p {
-        margin: 0;
+        margin: 0 0 0 auto;
 
         color: $white;
+        text-align: right;
+    }
 
-        @extend %t-shadow;
+    h1 {
+        @include outline;
+
+        @include x( l ) {
+            font-size: 12rem;
+        }
     }
 
     @include y {

@@ -7,7 +7,7 @@
 $dev: 			true;	// MASTER
 
 $guides: 		true;	// GUIDELINES
-$boundaries: 	true;	// BOUDARY MARKERS
+$boundaries: 	false;	// BOUDARY MARKERS
 
 
 
@@ -29,7 +29,7 @@ body {
 	body {
 		background-position: 0 -0.8rem;
 		background-image: linear-gradient( #ccc 1px, transparent 1px );
-		background-size: 100% 24px; 
+		background-size: 100% 30px; 
 	} 
 }
 
@@ -37,11 +37,12 @@ body {
 //  --|    BOUNDARIES
 @if ( $dev and $boundaries ) {
 
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3, h4, h5, h6, .item {
 		background-color: rgba( $orange, .1 );
 	} 
 
 	p, li {
 		background-color: rgba( $purple, .1 );
 	}
+
 }

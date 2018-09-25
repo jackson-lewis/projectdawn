@@ -21,24 +21,29 @@
     <body>
 
         <header>
+            <div>
+                
+                <!-- LOGO -->
+                <a href="#">
+                    <img src="assets/branding/logo.svg" alt="Logo">
+                </a>
+                
+                
+                <!-- MENU ICON -->
+                <div class="toggle" id="toggle">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
+                </div>
 
-            <!-- LOGO -->
-            <img src="assets/branding/logo.svg" alt="Logo">
-            
-            <!-- MENU ICON -->
-            <div class="toggle" id="toggle">
-                <span class="bar1"></span>
-                <span class="bar2"></span>
-                <span class="bar3"></span>
+                <!-- NAV PRIMARY -->
+                <nav>
+                    <ul>
+                        <li><a href="">about</a></li>
+                        <li><a href="">services</a></li>
+                        <li><a href="">contact</a></li>
+                    </ul>
+                </nav>
+
             </div>
-
-            <!-- NAV PRIMARY -->
-            <nav>
-                <ul>
-                    <li><a href="">about</a></li>
-                    <li><a href="">services</a></li>
-                    <li><a href="">contact</a></li>
-                </ul>
-            </nav>
-
         </header>

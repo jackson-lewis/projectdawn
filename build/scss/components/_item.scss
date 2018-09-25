@@ -7,8 +7,16 @@
 
 // The parent container of items must @extend %clearfix,
 // this is just an example (not a utility class)
+%container {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .item-container {
-    @extend %clearfix;
+    @extend %container;
 }
 
 
@@ -24,8 +32,24 @@
     display: block;
     position: relative;
 
+    text-align: center;
+
+    & > div {
+        padding: 1rem 1rem;
+
+        background-color: darken( $white, 5% );
+        border-radius: .4rem;
+        @extend %b-shadow;
+    }
+
     h5 {
         padding: 0; // Turns off true align
+    }
+
+    p {
+        margin-top: 2rem;
+        
+        text-align: center;
     }
 
     .thumbnail {
@@ -37,12 +61,6 @@
         // Set the aspect ratio for the image
         @include ratio( 16, 9 );
 
-        // This styling is required for the aspect ratio
-        // mixin to work, as it uses padding to create the size.
-        img {
-            position: absolute;
-            top: 0; left: 0;
-        }
     }
 
     // Set the number of items per row
@@ -51,6 +69,6 @@
     }
 
     @include x( l ) {
-        @include col( 3, false );
+        @include col( 4, false );
     }
 }
